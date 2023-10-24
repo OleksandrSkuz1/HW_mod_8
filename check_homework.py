@@ -60,9 +60,8 @@ class TestGetBirthdaysPerWeek(unittest.TestCase):
         expected = {}
         assert (
             result == expected
-            
         ), """1. Провалено тест коли всі дні народження користувачів вже минули у цьому році. Функція повинна повертати пустий словник"""
-        
+
     @patch("main.date")
     def test_empty_users(self, date_mock):
         """
@@ -155,9 +154,3 @@ class TestGetBirthdaysPerWeek(unittest.TestCase):
 if __name__ == "__main__":
     runner = CustomTestRunner(verbosity=0)
     unittest.main(testRunner=runner)
-        
-        
-        
-        
-        
-        
