@@ -3,13 +3,7 @@ from datetime import date, timedelta
 
 def get_birthdays_per_week(users):
     # Створюємо словник для зберігання днів народження
-    day_name = {
-        "Monday": [],
-        "Tuesday": [],
-        "Wednesday": [],
-        "Thursday": [],
-        "Friday": [],
-    }
+    day_name = {}
 
     # Отримуємо поточну дату та останній день поздоровлень
     today = date.today()
@@ -32,7 +26,7 @@ def get_birthdays_per_week(users):
             user_birthday = date(today.year + 1, user_birthday.month, user_birthday.day)
             days_until_birthday = (user_birthday - today).days
 
-        # Перевіряємо, чи день народження в наступному тижні
+        # Перевіряємо, чи день народження на наступному тижні
         if days_until_birthday <= 7:
             # Додаємо ім'я користувача до відповідного дня тижня
             day_of_week = user_birthday.strftime("%A")
